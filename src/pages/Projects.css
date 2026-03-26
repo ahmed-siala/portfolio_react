@@ -1,0 +1,47 @@
+.projects-page {
+  padding: 60px;
+  background: #f5f8ff;
+  min-height: 100vh;
+}
+
+.projects-page h1 {
+  color: #0a2cff;
+  margin-bottom: 30px;
+}
+
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.projects-table thead {
+  background: #0a2cff;
+  color: white;
+}
+
+.projects-table th,
+.projects-table td {
+  padding: 15px;
+  text-align: left;
+}
+
+.projects-table tr:nth-child(even) {
+  background: #f1f4ff;
+}
+
+.delete-btn {
+  background: #ff3b3b;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #d62828;
+}
