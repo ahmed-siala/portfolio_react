@@ -1,16 +1,70 @@
-# React + Vite
+# Ahmed Siala — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website with CRUD project management, built with **React 19** and **Vite**.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Home** — Hero section, about summary, skills grid (with Devicon icons), featured projects, and contact CTA
+- **Projects** — Lists all projects from the backend in a table with delete functionality
+- **Admin** — Form to add new projects (title + description) via the API
+- **About** — Profile card with bio and quick stats
+- **Contact** — Contact info (email, phone, LinkedIn, spoken languages) and a message form
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Layer     | Technology                          |
+| --------- | ----------------------------------- |
+| Frontend  | React 19, React Router 7            |
+| Build     | Vite 7                              |
+| Backend   | JSON Server (REST API on port 4000) |
+| Icons     | Devicon                             |
+| Linting   | ESLint 9                            |
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Node.js** ≥ 18
+- **npm**
+- **JSON Server** — the app expects a REST API at `http://localhost:4000/projects`
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start the mock API (requires json-server)
+npx json-server --watch db.json --port 4000
+
+# In a separate terminal, start the dev server
+npm run dev
+```
+
+The app will be available at `http://localhost:5173` by default.
+
+## Project Structure
+
+```
+src/
+├── api/
+│   └── projectsApi.js    # Fetch helpers: getProjects, addProject, deleteProject
+├── assets/
+│   └── profile.jpg        # Profile photo
+├── pages/
+│   ├── Home.jsx / Home.css
+│   ├── Projects.jsx / Projects.css
+│   ├── Admin.jsx / Admin.css
+│   ├── About.jsx / about.css
+│   └── Contact.jsx / Contact.css
+├── App.jsx / App.css      # Navbar + route definitions
+├── main.jsx               # React root with BrowserRouter
+└── index.css              # Global styles
+```
+
+## Available Scripts
+
+| Command           | Description                  |
+| ----------------- | ---------------------------- |
+| `npm run dev`     | Start Vite dev server (HMR)  |
+| `npm run build`   | Production build             |
+| `npm run preview` | Preview production build     |
+| `npm run lint`    | Run ESLint                   |
